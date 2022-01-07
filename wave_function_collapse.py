@@ -80,6 +80,9 @@ def main(argv=None):
     #   may be drawn in the output image. How the rules are applied is not well
     #   understood. Since pygame Surface objects aren't hashable mapping and
     #   counting and finding unique tiles is difficult.
+    # 2022-01-07:
+    #   * think this being called wave function collapse is silly. it's just
+    #     rules for placing tiles.
 
     # count dupes
     counter = Counter(table_surface_map.keys())
