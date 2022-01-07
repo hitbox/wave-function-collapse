@@ -9,6 +9,10 @@ with contextlib.redirect_stdout(open(os.devnull,'w')):
     import pygame
 
 def get_tiles(input_image, size):
+    """
+    Slide over `input_image` obtaining squares of side size `size`, wrapping
+    around edges.
+    """
     output = []
     input_width, input_height = input_image.get_size()
     for y, x in product(range(input_height), range(input_width)):
@@ -20,8 +24,10 @@ def get_tiles(input_image, size):
         output.append(surface)
     return output
 
-
 def get_surface_table(surf):
+    """
+    Return nested tuple table of the colors of a surface.
+    """
     width, height = surf.get_size()
     table = tuple(
         tuple(
@@ -32,6 +38,9 @@ def get_surface_table(surf):
     return table
 
 def sample_input_image(size, color, background):
+    """
+    Produce a sample input image like the one on gridbugs.org.
+    """
     # the first 4x4 input image generator
     # https://www.gridbugs.org/wave-function-collapse/
     rect = pygame.Rect((0,0), size)
